@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div class="nav">
+	<colors >
+		<div class="dropdown">
+		<button class="dropbtn">Social Media</button>
+		<div class="dropdown-content">
+			<a href="https://www.google.com">Google</a>
+			<a href="https://www.facebook.com">Facebook</a>
+			<a href="https://www.youtube.com">YouTube</a>
+		</div>
+		</div>
+	</colors>
+	<food >	
+		<div class="dropdown">
+		<button class="dropbtn">Food</button>
+		<div class="dropdown-content">
+			<a href="#Pasta">Pasta</a>
+			<a href="#Salad">Salad</a>
+			<a href="#ChocolateFudge">Chocolate Fudge</a>
+		</div>
+		</div>
+	</food>
+	<place >
+		<div class="dropdown">
+		<button class="dropbtn">Place</button>
+		<div class="dropdown-content">
+			<a href="#Pune">Pune</a>
+			<a href="#Canada">Canada</a>
+			<a href="#Dubai">Dubai</a>
+		</div>
+		</div>
+	</place>
+	<activity>	
+		<div class="dropdown">
+		<button class="dropbtn">Activity</button>
+		<div class="dropdown-content">
+			<a href="#Play">Play</a>
+			<a href="#Sleep">Sleep</a>
+			<a href="#Read">Read</a>
+		</div>
+		</div>
+	</activity>
+</div>
+</body>
+</html>
