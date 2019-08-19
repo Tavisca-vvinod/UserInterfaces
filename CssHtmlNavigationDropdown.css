@@ -28,6 +28,11 @@
     position: static;
     border: 3px solid #73AD21;
 }
+
+body{
+    background-color: red;
+}
+
 .dropdown-content a:hover {background-color: pink;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: green;}
