@@ -10,7 +10,6 @@
             li = ul.getElementsByTagName("li");
             for (i = 0; i < li.length; i++) {
                 a = li[i].getElementsByTagName("a")[0];
-
                 if (a.innerHTML.toUpperCase().startsWith(filter)) {
                     li[i].style.display = "";
                 } else {
@@ -34,24 +33,33 @@
         }
 		function makeSearch()
 		{
-			var buttonscript="<input type=\"text\" id=\"mySearch\" onkeyup=\"myFunction()\" placeholder=\"Search..\">";
-            buttonscript=buttonscript+"<ul id=\"myMenu\">";
+            var buttonscript='<ul id="myMenu"><input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search..">';
             var tasks= JSON.parse(localStorage.tasks);
-            tasks.forEach(i=>{buttonscript=buttonscript+"<li><a href=\"#\">"+i+"</a>";
+            tasks.sort();
+            tasks.forEach(i=>{
+                              buttonscript=buttonscript+"<li><a href=\"#\">"+i+"</a>";
                               var deletemethod="\"deleteTask(\'"+i+"\')\"";
                               var editmethod="\"editTask(\'"+i+"\')\"";
-                              buttonscript=buttonscript+"<div class=\"Delete\"><button id=\"seperate\" onclick="+deletemethod+">Delete</button></div>";
-                              buttonscript=buttonscript+"<div class=\"Edit\"><button id=\"seperate\" onclick="+editmethod+">Edit</button></li><br></div>";});
+                              buttonscript=buttonscript+'<div class="Delete"><button id="seperate" onclick='+deletemethod+'>Delete</button></div>';
+                              buttonscript=buttonscript+'<div class="Edit"><button id="seperate" onclick='+editmethod+'>Edit</button></li><br></div>';
+                              }
+                          );
             buttonscript=buttonscript+"</ul>";
             buttonscript=buttonscript+"<button onclick=\"addTask()\">Add Task</button>";
 			document.getElementById("p1").innerHTML=buttonscript;
-
 		}
 		function deleteTask(input)
 		{
             var tasks=html5docs = JSON.parse(localStorage.tasks);
-            tasks.pop(input);
-            localStorage.tasks = JSON.stringify(tasks);
+            var newTasks=[];
+            tasks.forEach(i=>{
+                                if(i!=input)
+                                {
+                                    newTasks.push(i);
+                                }
+                              }
+                           );
+            localStorage.tasks = JSON.stringify(newTasks);
             makeSearch();
 		}
 		function editTask(input)
@@ -60,15 +68,26 @@
             var newTask = prompt("Please make the change",input);
             if (newTask != null && newTask != "") {
                 var tasks=html5docs = JSON.parse(localStorage.tasks);
-                tasks.pop(input);
-                tasks.push(newTask);
-                localStorage.tasks = JSON.stringify(tasks);
+                var newTasks=[];
+                tasks.forEach(i=>{
+                                if(i!=input)
+                                {
+                                    newTasks.push(i);
+                                }
+                              }
+                           );
+                newTasks.push(newTask);
+                localStorage.tasks = JSON.stringify(newTasks);
             }
             makeSearch();
 		}
-		function clearContent()
+		function UselessTab1()
 		{
-		    document.getElementById("p1").innerHTML=" ";
+		    document.getElementById("p1").innerHTML="Inside useless tab 1";
+		}
+		function UselessTab2()
+		{
+		    document.getElementById("p1").innerHTML="Inside useless tab 2";
 		}
 	</script>
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -76,11 +95,10 @@
 <body>
     <ul>
         <li><button onclick="makeSearch()">To Do</button></li>
-        <li><button onclick="clearContent()">Useless1</button></li>
-        <li><button onclick="clearContent()">Useless2</button></li>
+        <li><button onclick="UselessTab1()">Useless Tab 1</button></li>
+        <li><button onclick="UselessTab2()">Useless Tab 2</button></li>
     </ul>
     <p id="p1">
-
     </p>
 </body>
 </html>
