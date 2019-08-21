@@ -7,6 +7,10 @@
 			var buttonscript="<input type=\"text\"><button>Search</button>";
 			document.getElementById("p1").innerHTML=buttonscript;
 		}
+		function clearContent()
+		{
+		    document.getElementById("p1").innerHTML=" ";
+		}
 	</script>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -14,8 +18,8 @@
 <div class="TabsAndContent">
     <ul>
         <li><button onclick="makeSearch()">To Do</button></li>
-        <li><button>Useless1</button></li>
-        <li><button>Useless2</button></li>
+        <li><button onclick="clearContent()">Useless1</button></li>
+        <li><button onclick="clearContent()">Useless2</button></li>
     </ul>
 </div>
 <div class="TabsAndContent">
