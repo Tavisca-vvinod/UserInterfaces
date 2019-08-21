@@ -33,8 +33,9 @@
             var tasks= JSON.parse(localStorage.tasks);
             tasks.forEach(i=>{buttonscript=buttonscript+"<li><a href=\"#\">"+i+"</a>";
                               var deletemethod="\"deleteTask(\'"+i+"\')\"";
+                              var editmethod="\"editTask(\'"+i+"\')\"";
                               buttonscript=buttonscript+"<div class=\"Delete\"><button id=\"seperate\" onclick="+deletemethod+">Delete</button></div>";
-                              buttonscript=buttonscript+"<div class=\"Edit\"><button id=\"seperate\" onclick=\"editTask()\">Edit</button></li><br></div>";});
+                              buttonscript=buttonscript+"<div class=\"Edit\"><button id=\"seperate\" onclick="+editmethod+">Edit</button></li><br></div>";});
             buttonscript=buttonscript+"</ul>";
             buttonscript=buttonscript+"<button onclick=\"addTask()\">Add Task</button>";
 			document.getElementById("p1").innerHTML=buttonscript;
@@ -45,6 +46,18 @@
             var tasks=html5docs = JSON.parse(localStorage.tasks);
             tasks.pop(input);
             localStorage.tasks = JSON.stringify(tasks);
+            makeSearch();
+		}
+		function editTask(input)
+		{
+		    var txt;
+            var newTask = prompt("Please make the change",input);
+            if (newTask != null && newTask != "") {
+                var tasks=html5docs = JSON.parse(localStorage.tasks);
+                tasks.pop(input);
+                tasks.push(newTask);
+                localStorage.tasks = JSON.stringify(tasks);
+            }
             makeSearch();
 		}
 		function clearContent()
