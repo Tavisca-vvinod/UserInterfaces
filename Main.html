@@ -2,10 +2,50 @@
 <html>
 <head>
     <script type="text/javascript">
+    function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+
+                if (a.innerHTML.toUpperCase().startsWith(filter)) {
+                    li[i].style.display = "";
+                } else {
+                li[i].style.display = "none";
+                }
+            }
+        }
+        function addd()
+        {
+            var input = document.getElementById("mySearch").value;
+            var tasks=html5docs = JSON.parse(localStorage.tasks);
+            tasks.push(input);
+            localStorage.tasks = JSON.stringify(tasks);
+            makeSearch();
+        }
 		function makeSearch()
 		{
-			var buttonscript="<input type=\"text\"><button>Search</button>";
+			var buttonscript="<input type=\"text\" id=\"mySearch\" onkeyup=\"myFunction()\" placeholder=\"Search..\">";
+            buttonscript=buttonscript+"<ul id=\"myMenu\">";
+            var tasks= JSON.parse(localStorage.tasks);
+            tasks.forEach(i=>{buttonscript=buttonscript+"<li><a href=\"#\">"+i+"</a>";
+                              var deletemethod="\"deleteTask(\'"+i+"\')\"";
+                              buttonscript=buttonscript+"<div class=\"Delete\"><button id=\"seperate\" onclick="+deletemethod+">Delete</button></div>";
+                              buttonscript=buttonscript+"<div class=\"Edit\"><button id=\"seperate\" onclick=\"editTask()\">Edit</button></li><br></div>";});
+            buttonscript=buttonscript+"</ul>";
+            buttonscript=buttonscript+"<button onclick=\"addd()\">Add Task</button>";
 			document.getElementById("p1").innerHTML=buttonscript;
+
+		}
+		function deleteTask(input)
+		{
+            var tasks=html5docs = JSON.parse(localStorage.tasks);
+            tasks.pop(input);
+            localStorage.tasks = JSON.stringify(tasks);
+            makeSearch();
 		}
 		function clearContent()
 		{
@@ -15,17 +55,13 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<div class="TabsAndContent">
     <ul>
         <li><button onclick="makeSearch()">To Do</button></li>
         <li><button onclick="clearContent()">Useless1</button></li>
         <li><button onclick="clearContent()">Useless2</button></li>
     </ul>
-</div>
-<div class="TabsAndContent">
     <p id="p1">
 
     </p>
-</div>
 </body>
 </html>
