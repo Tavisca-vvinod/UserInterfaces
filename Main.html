@@ -21,7 +21,7 @@
         function addTask()
         {
             var input = document.getElementById("mySearch").value;
-            var tasks=html5docs = JSON.parse(localStorage.tasks);
+            var tasks= JSON.parse(localStorage.tasks);
             tasks.push(input);
             localStorage.tasks = JSON.stringify(tasks);
             makeSearch();
