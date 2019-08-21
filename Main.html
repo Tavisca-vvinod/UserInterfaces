@@ -18,7 +18,7 @@
                 }
             }
         }
-        function addd()
+        function addTask()
         {
             var input = document.getElementById("mySearch").value;
             var tasks=html5docs = JSON.parse(localStorage.tasks);
@@ -36,7 +36,7 @@
                               buttonscript=buttonscript+"<div class=\"Delete\"><button id=\"seperate\" onclick="+deletemethod+">Delete</button></div>";
                               buttonscript=buttonscript+"<div class=\"Edit\"><button id=\"seperate\" onclick=\"editTask()\">Edit</button></li><br></div>";});
             buttonscript=buttonscript+"</ul>";
-            buttonscript=buttonscript+"<button onclick=\"addd()\">Add Task</button>";
+            buttonscript=buttonscript+"<button onclick=\"addTask()\">Add Task</button>";
 			document.getElementById("p1").innerHTML=buttonscript;
 
 		}
