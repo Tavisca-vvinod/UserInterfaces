@@ -22,6 +22,12 @@
         {
             var input = document.getElementById("mySearch").value;
             var tasks= JSON.parse(localStorage.tasks);
+            if(tasks.includes(input))
+            {
+                alert("Task already exists");
+                makeSearch();
+                return;
+            }
             tasks.push(input);
             localStorage.tasks = JSON.stringify(tasks);
             makeSearch();
