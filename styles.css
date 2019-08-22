@@ -31,21 +31,21 @@ li button:hover {
 }
 
 #seperate{
-    height:50px;
+    height:42px;
     width:100px;
 }
 .Delete{
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(50%, -80%);
+    transform: translate(50%, -100%);
 }
 
 .Edit{
-top: 50%;
+    top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(83%, -180%);
+    transform: translate(83%, -200%);
 }
 
 body{
