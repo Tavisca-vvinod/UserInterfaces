@@ -5,7 +5,7 @@
 }
 .dropbtn {
     float: left;
-    background-color: black;
+    background-color: #7B241C;
     color: white;
     position: relative;
     margin-left: 0px;
@@ -15,24 +15,20 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: lightgrey;
+    background-color: #CD5C5C;
 }
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 25px 16px;
     text-decoration: none;
     display: block;
 }
 
-.nav{
-    position: static;
-    border: 3px solid #73AD21;
-}
 
 body{
-    background-color: red;
+    background-color: #F5B7B1 ;
 }
 
 .dropdown-content a:hover {background-color: pink;}
 .dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: green;}
+.dropdown:hover .dropbtn {background-color: #FADBD8  ;}
