@@ -23,6 +23,15 @@ export default class LeftDiv extends React.Component {
                     </ul>
                 </div>
                 <div id="right">
+                    <center>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     First Name
                     <input type="text" id="fname"/> <br />
                     Last Name
@@ -32,7 +41,7 @@ export default class LeftDiv extends React.Component {
                     <p id="simply">
                     </p>
                     </p>
-
+                    </center>
                 </div>
                </div>
   }
