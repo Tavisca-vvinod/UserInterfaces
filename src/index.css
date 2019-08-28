@@ -6,19 +6,36 @@
 #left
 {
     float: left;
-    width: 50%;
-    background-color:  #ffe6e6;
+    width: 30%;
+    background-color:  #ffe676;
     height: 700px;
 }
 #right
 {
     float: left;
-    width: 50%;
-    background-color: #b3e0ff;
+    width: 70%;
+    background-color: #b3e76f;
     height: 700px;
 }
 #simply
 {
-   color: #b3e0ff;
+    display: none;
     height: 700px;
+}
+#p1,#p2,#p3,#p4{
+    width: 400px;
+    height: 157px;
+}
+input{
+    width:250px;
+    height:50px;
+}
+#b1{
+    width:100px;
+    height:50px;
+}
+*{
+    text-align: center;
+    font-size: 20px;
+    font-family: Comic Sans MS;
 }
